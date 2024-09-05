@@ -8,16 +8,12 @@ public abstract class ScriptAdder<T> : MonoBehaviour where T : Component //make 
 {
     protected virtual void Awake()
     {
-        //get the component with the given component
-        Component component = GetComponent<T>();
-
-        //if the ballMovement is null, it means we are not on the gameObject with the component
-        if (component != null)
-            return; //return because we are on the component
-
         //find the component and add the  to it
-        component = FindObjectOfType<T>(); //find the object of type T
-        component.gameObject.AddComponent(GetType()); //GetType() gets the type of the instance
+        Component[] components = FindObjectsOfType<T>(); //find the object of type T
+        foreach (Component component in components)
+        {
+            component.gameObject.AddComponent(GetType()); //GetType() gets the type of the instance
+        }
         Destroy(this); //remove the instance from the current script because we don't belong here >:3
     }
 }
