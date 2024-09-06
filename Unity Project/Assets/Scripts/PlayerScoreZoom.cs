@@ -26,7 +26,7 @@ public class PlayerScoreZoom : MonoBehaviour
         yield return new WaitForSeconds(0.005f); //Dit is om het smooth te maken.
             camera.orthographicSize -= 0.25f; //The size van de camera wordt verminderd met 0.25f
         }
-        yield return new WaitForSeconds(1f); //Tussen het inzoomen en uitzoomen is er wachttijd van 1 seconde
+        yield return new WaitForSeconds(1.6f); //Tussen het inzoomen en uitzoomen is er wachttijd van 1 seconde
         for (float i = 1; i < 11; i += 0.25f) //The size van de camera wordt meer zodat het weer uitzoomt
         {
             yield return new WaitForSeconds(0.005f); //Maakt het smoother
