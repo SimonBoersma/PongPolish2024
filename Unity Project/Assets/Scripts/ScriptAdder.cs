@@ -8,6 +8,9 @@ public abstract class ScriptAdder<T> : MonoBehaviour where T : Component //make 
 {
     protected virtual void Awake()
     {
+        if (GetComponent<T>() != null)
+            return;
+
         //find the component and add the  to it
         Component[] components = FindObjectsOfType<T>(); //find the object of type T
         foreach (Component component in components)
