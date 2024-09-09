@@ -6,7 +6,7 @@ public class StartGameText : MonoBehaviour
     [SerializeField] GameObject playText;
     void Start()
     {
-        ballMovement = FindFirstObjectByType<BallMovement>();
+        ballMovement = FindObjectOfType<BallMovement>();
     }
 
     void Update()
